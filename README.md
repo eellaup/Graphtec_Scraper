@@ -10,11 +10,11 @@ The default IP iddress via ethernet is http://169.254.0.1
 
 When the IP address is entered, a html page is returned, as shown in Figure 1. The graphtec can actually be remotely controlled through this web UI. `Selenium` and `BeautifulSoup` are Python packages that enable web scraping. `Selenium` simulates web browser navigation and `BeautifulSoup` is an extremely user-friendly HTML parser.
 
-![Figure 1. Default Screen](img/mainScreen.png)
+![Figure 1](img/mainScreen.png) Figure 1. Default Screen
 
 <center>
     <img src="https://bitbucket.org/plee-altect/graphtec_scraper/src/master/img/mainScreen.png" align=center>
-    Figure 1. Default Screen
+    
 </center>
 <br/>
 <br/>
@@ -35,7 +35,9 @@ Order of Operations:
 
    The last step is to extract the temperature data. All the channel temperature data are logged in an HTML table structure in the `rightframe` -> `digitalDispaly` Frame.
 
+![Figure 2](img/displayScreen.png) Figure 2. Display Screen
+
 <center>
     <img src="img/displayScreen.png" align=center>
-    Figure 2. Display Screen
+    
 </center>
