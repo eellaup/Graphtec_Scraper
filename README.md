@@ -12,7 +12,7 @@ When the IP address is entered, a html page is returned, as shown in Figure 1. T
 
 **Figure 1. Default Screen**
 
-![Figure 1](img/mainScreen.png){width=300 height=200}
+![Figure 1](img/mainScreen.png)
 
 The webpage is dynamically generated (the URL doesn't change) where views can be changed based on menu options. In order to dynamically change the view, the webpage is constructed of `frames`.
 
@@ -32,4 +32,4 @@ The webpage is dynamically generated (the URL doesn't change) where views can be
 
 **Figure 2. Display Screen**
 
-![Figure 2](img/displayScreen.png){width=300 height=200}
+![Figure 2](img/displayScreen.png)
