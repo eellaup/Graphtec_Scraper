@@ -1,6 +1,6 @@
 # Graphtec Web Scraper
 
-This script will be able to scrape temperature data from Graphtec's local web service. Graphtec does not support data transfer via serial communication for Linux systems. Instead by plugging an ethernet cable to a raspberry pi, real-time (2 sec delay) temperature data can be scraped.
+This script will be able to scrape temperature data from Graphtec's local web service. Graphtec does not support data transfer via serial communication for Linux systems. Instead, by plugging an ethernet cable to a raspberry pi, real-time (2 sec delay) temperature data can be scraped.
 
 ## How does it work?
 

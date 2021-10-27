@@ -17,7 +17,7 @@ if __name__ == '__main__':
         
         # get 10 data sets
         for i in range(10):
-            print(graphtec.getTemp())
+            print(graphtec.getVal())
             time.sleep(1)
     except:
         print('Something happened')

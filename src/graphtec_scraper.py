@@ -72,7 +72,7 @@ class Graphtec_Scraper():
                 print('    ',e)
                 self.closeBrowser()
 
-    def getTemp(self):
+    def getVal(self):
         tempVal = {'CH1':-999,'CH2':-999,'CH3':-999,'CH4':-999,'CH5':-999,'CH6':-999,'CH7':-999,'CH8':-999,'CH9':-999,'CH10':-999,
             'CH11':-999,'CH12':-999,'CH13':-999,'CH14':-999,'CH15':-999,'CH16':-999,'CH18':-999,'CH19':-999,'CH20':-999}
 
