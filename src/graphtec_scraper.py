@@ -73,16 +73,16 @@ class Graphtec_Scraper():
                 self.closeBrowser()
 
     def getVal(self):
-        tempVal = {'CH1':-999,'CH2':-999,'CH3':-999,'CH4':-999,'CH5':-999,'CH6':-999,'CH7':-999,'CH8':-999,'CH9':-999,'CH10':-999,
-            'CH11':-999,'CH12':-999,'CH13':-999,'CH14':-999,'CH15':-999,'CH16':-999,'CH18':-999,'CH19':-999,'CH20':-999}
+        outputVal = {'CH1':-999,'CH2':-999,'CH3':-999,'CH4':-999,'CH5':-999,'CH6':-999,'CH7':-999,'CH8':-999,'CH9':-999,'CH10':-999,
+            'CH11':-999,'CH12':-999,'CH13':-999,'CH14':-999,'CH15':-999,'CH16':-999,'CH17':-999,'CH18':-999,'CH19':-999,'CH20':-999}
 
         # error checking
         if not self.open:
-            print("Browser not open, can't getTemp")
-            return tempVal
+            print("Browser not open, can't getVal")
+            return outputVal
         if not self.nav:
-            print("Browser not navigated, can't getTemp")
-            return tempVal
+            print("Browser not navigated, can't getVal")
+            return outputVal
 
         try:
             # get page details
@@ -98,9 +98,9 @@ class Graphtec_Scraper():
                 val = values[1].text.replace('\xa0','').replace('+','').replace(' ','').replace('-','')
 
                 # Dump data into output variable
-                if ch in tempVal and 'BURNOUT' not in val and 'Off' not in val:
-                    tempVal[ch] = val
+                if ch in outputVal and 'BURNOUT' not in val and 'Off' not in val:
+                    outputVal[ch] = val
         except:
-            print('Browser getTemp Failed?')
+            print('Browser getVal Failed?')
         
-        return tempVal
+        return outputVal
