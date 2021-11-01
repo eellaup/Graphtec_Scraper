@@ -3,18 +3,30 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
+import os
 
 class Graphtec_Scraper():
     def __init__(self,url):
+        # save url
         self.url = url
-        # start driver
-        options = Options()
-        options.add_argument('--no-sandbox')
-        options.add_argument('--headless')
-        options.add_argument('--disable-dev-shm-usage')
-        # options.headless = True
 
-        self.browser = webdriver.Chrome(options=options)
+        # check if response is live
+        response = os.system("ping -c 1 " + self.url)
+        
+        # url is valid
+        if response == 0:
+            # start driver
+            options = Options()
+            options.add_argument('--no-sandbox')
+            options.add_argument('--headless')
+            options.add_argument('--disable-dev-shm-usage')
+            # options.headless = True
+
+            self.browser = webdriver.Chrome(options=options)
+            self.valid = True
+        else:
+            self.valid = False
+            print("Graphtec URL not valid")
         # is browser open?
         self.open = False
         # was browser navigation succcessful?
@@ -22,6 +34,10 @@ class Graphtec_Scraper():
     
     # Opens the browser
     def openBrowser(self):
+        if not self.valid:
+            print("OPEN ERROR: Graphtec URL not valid")
+            return
+
         if not self.open:
             self.browser.get(self.url)
             self.open = True
@@ -31,6 +47,10 @@ class Graphtec_Scraper():
     
     # Closes the Browser
     def closeBrowser(self):
+        if not self.valid:
+            print("CLOSE ERROR: Graphtec URL not valid")
+            return
+
         if self.open:
             self.browser.close()
             self.open = False
@@ -40,6 +60,10 @@ class Graphtec_Scraper():
     
     # navigate to the page with data
     def navigateToData(self):
+        if not self.valid:
+            print("NAVIGATE ERROR: Graphtec URL not valid")
+            return
+
         if self.open:
             try:
                 # go to menu settings
@@ -73,6 +97,10 @@ class Graphtec_Scraper():
                 self.closeBrowser()
 
     def getVal(self):
+        if not self.valid:
+            print("GETVAL ERROR: Graphtec URL not valid")
+            return
+
         outputVal = {'CH1':-999,'CH2':-999,'CH3':-999,'CH4':-999,'CH5':-999,'CH6':-999,'CH7':-999,'CH8':-999,'CH9':-999,'CH10':-999,
             'CH11':-999,'CH12':-999,'CH13':-999,'CH14':-999,'CH15':-999,'CH16':-999,'CH17':-999,'CH18':-999,'CH19':-999,'CH20':-999}
 
