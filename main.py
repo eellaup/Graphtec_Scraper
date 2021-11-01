@@ -9,18 +9,19 @@ if __name__ == '__main__':
     # initiate graphtec scraper instance
     graphtec = Graphtec_Scraper(GRAPHTEC_URL)
 
-    try:
-        # Open
-        graphtec.openBrowser()
-        # navigate
-        graphtec.navigateToData()
-        
-        # get 10 data sets
-        for i in range(10):
-            print(graphtec.getVal())
-            time.sleep(1)
-    except:
-        print('Something happened')
+    if graphtec.valid:
+        try:
+            # Open
+            graphtec.openBrowser()
+            # navigate
+            graphtec.navigateToData()
+            
+            # get 10 data sets
+            for i in range(10):
+                print(graphtec.getVal())
+                time.sleep(1)
+        except:
+            print('Something happened')
 
-    # Close
-    graphtec.closeBrowser()
+        # Close
+        graphtec.closeBrowser()
